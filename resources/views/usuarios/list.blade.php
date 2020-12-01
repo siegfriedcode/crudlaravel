@@ -16,7 +16,7 @@
                     <tr>
                         <th>Nombre</th>
                         <th>email</th>
-                        <th>Acciones</th>
+                        <th colspan="2">Acciones</th>
                     </tr>
                 </thead>
 
@@ -25,6 +25,17 @@
                     <tr>
                         <td>{{$user->nombre}}</td>
                         <td>{{$user->email}}</td>
+                        
+
+                        <td>
+
+                            <a href="{{route('editform', $user->id)}}" class="btn btn-primary mb-1">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                        
+                        </td>
+
+ 
                         <td>
                             <form action="{{route('delete', $user->id)}}" method="POST">
                                 @csrf @method('DELETE')
@@ -32,8 +43,9 @@
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>
-                        
+
                         </td>
+
                     </tr>
                     @endforeach
                 </tbody>
