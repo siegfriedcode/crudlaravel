@@ -26,26 +26,23 @@
                         <td>{{$user->nombre}}</td>
                         <td>{{$user->email}}</td>
                         
-
                         <td>
-
-                            <a href="{{route('editform', $user->id)}}" class="btn btn-primary mb-1">
+                            <a href="{{route('editform', $user->id)}}" class="btn btn-primary">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
-                        
-                        </td>
+                            <button type="submit" onclick="return confirm('¿Eliminar usuario?');" class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
 
- 
-                        <td>
+                        
                             <form action="{{route('delete', $user->id)}}" method="POST">
                                 @csrf @method('DELETE')
-                                <button type="submit" onclick="return confirm('¿Eliminar usuario?');" class="btn btn-danger">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
+                                
+                                
+                                
                             </form>
 
                         </td>
-
                     </tr>
                     @endforeach
                 </tbody>
