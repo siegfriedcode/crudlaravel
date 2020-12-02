@@ -27,10 +27,12 @@
                         <td>{{$user->email}}</td>
                         
                         <td>
-                            <a href="{{route('editform', $user->id)}}" class="btn btn-primary">
+                            <a href="{{route('editform', $user->id)}}" class="btn btn-primary"
+                            title="Editar">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
-                            <button type="submit" onclick="return confirm('¿Eliminar usuario?');" class="btn btn-danger">
+                            <button type="submit" onclick="return confirm('¿Eliminar usuario?');" 
+                            class="btn btn-danger" title="Eliminar">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
 
